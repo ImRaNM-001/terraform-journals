@@ -18,6 +18,8 @@ ssh -i ~/.ssh/id_rsa ubuntu@<EC2-PUBLIC-IP>
 (creates & auto-switches to workspace)
 tf workspace new <workspace-env>
 ex: tf workspace new dev
+tf workspace new test
+tf workspace new stage
 
 (switch to workspace manually)
 tf workspace select <workspace-env>
