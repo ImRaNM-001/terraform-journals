@@ -37,3 +37,16 @@ override.tf.json
 terraform.rc
 
 *.lock.hcl
+
+/**/*.tfstate*
+/**/.terraform
+../modules/key/client_key
+../modules/key/client_key.pub
+*.hcl
+*.lock*
+
+# Ignore .DS_Store everywhere
+.DS_Store
+**/.DS_Store
+*/.DS_Store
+.DS_Store?

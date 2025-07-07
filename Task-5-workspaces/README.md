@@ -1,50 +1,55 @@
 # terraform-journals
 
+## Task-5: Terraform Workspaces
 
+### Workspace Management
 
-## Task4
-- command to generate an ssh key pair
-```bash
-ssh-keygen -t rsa
-```
-
-- ssh login to ec2 instance to run the application
-```bash
-ssh -i ~/.ssh/id_rsa ubuntu@<EC2-PUBLIC-IP>
-```
-
-
-## Task5
-(creates & auto-switches to workspace)
+**Creating workspaces:**
+```sh
+# Creates & auto-switches to workspace
 tf workspace new <workspace-env>
-ex: tf workspace new dev
+# Examples:
+tf workspace new dev
 tf workspace new test
 tf workspace new stage
+```
 
-(switch to workspace manually)
+**Workspace navigation:**
+```sh
+# Switch to workspace manually
 tf workspace select <workspace-env>
-ex: tf workspace select dev
+# Examples:
+tf workspace select dev
 
-(see `current workspace`)
+# See current workspace
 tf workspace show
-        --> dev
+# --> dev
 
-(list `all workspaces`)
+# List all workspaces
 tf workspace list
-        -->  default
-            dev
-            * stage
-            test
+# -->  default
+#     dev
+#     * stage
+#     test
+```
 
-(plan with a specific `env tfvar` file)
+### Working with environment-specific variables
+
+```sh
+# Plan with a specific `env tfvar` file
 tf plan -var-file=<workspace-env>.tfvars
-ex: tf plan -var-file=dev.tfvars
+# Examples:
+tf plan -var-file=dev.tfvars
 
-(apply with a specific `env tfvar` file)
+# Apply with a specific env tfvar file
 tf apply -var-file=<workspace-env>.tfvars
-ex: tf apply -var-file=dev.tfvars
+# Examples:
+tf apply -var-file=dev.tfvars
+```
 
+### Project Structure
 
+```sh
 tree
 .
 ├── dev.tfvars
@@ -64,9 +69,4 @@ tree
 └── variables.tf
 
 6 directories, 9 files
-
-
-
-
-
-
+```
