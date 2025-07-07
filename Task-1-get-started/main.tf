@@ -7,11 +7,11 @@ terraform {
   required_providers {
     aws = {
       source = "hashicorp/aws"
-      version = "~> 1.12"     # Use compatible version for Terraform v1.12.x
+      version = "~> 5.95.0"       # Use compatible version for Terraform v1.12.x so to match aws services like EKS module requirements
     }
   }
 
-  required_version = ">= 1.12.0"
+  required_version = ">= 1.12.2"
 }
 
 # setting the cloud provider
